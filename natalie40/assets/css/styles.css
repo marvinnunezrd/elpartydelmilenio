@@ -218,12 +218,14 @@ img {
 }
 
 .details-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
 }
 
 .detail-card {
+  flex: 0 1 calc((100% - 50px) / 3);
   padding: 35px;
   border-radius: 28px;
   background: rgba(255,255,255,0.08);
@@ -405,8 +407,8 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .details-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .detail-card {
+    flex-basis: calc((100% - 25px) / 2);
   }
 
   .gallery-grid {
@@ -439,7 +441,10 @@ img {
     font-size: 1rem;
   }
 
-  .details-grid,
+  .detail-card {
+    flex-basis: 100%;
+  }
+
   .gallery-grid {
     grid-template-columns: 1fr;
   }
